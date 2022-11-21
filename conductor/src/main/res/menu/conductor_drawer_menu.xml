@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/ic_wallet"
+            android:title="Wallet" />
+
+        <item
+            android:id="@+id/nav_howmuch"
+            android:icon="@drawable/ic_howmuch"
+            android:title="How much You've Made Today" />
+
+        <item
+            android:id="@+id/nav_numberoftrips"
+            android:icon="@drawable/ic_numberoftrips"
+            android:title="Number of Trips" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
+
+</menu>

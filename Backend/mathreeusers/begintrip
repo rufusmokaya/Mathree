@@ -1,0 +1,11 @@
+<?php
+include("initm.php") ;
+    $gottenFname =$_POST['firstname'];
+	$gottenSname =$_POST['secondname'];
+	$gottenUsername =$_POST['username'];
+	$gottenGender =$_POST['gender'];
+	$gottenBusComp =$_POST['buscompany'];
+
+
+
+?>

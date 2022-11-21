@@ -1,0 +1,29 @@
+<?php
+include("initm.php") ;
+    $gottenFname =$_POST['firstname'];
+	$gottenSname =$_POST['secondname'];
+	$gottenUsername =$_POST['username'];
+	$gottenGender =$_POST['gender'];
+	$gottenPhone =$_POST['phone'];
+	$gottenPassword =$_POST['password'];
+	$selectQuery="SELECT * FROM customerusers WHERE phone like '".$gottenPhone."'"; 
+	$selectResults = mysqli_query($connection,$selectQuery); 
+	$response = array();
+	if(mysqli_num_rows($selectResults)>0)
+	{
+		$code = "reg_failed";
+		$message = "User already exists";
+		array_push($response, array("code"=>$code,"message"=>$message));
+		echo json_encode($response);
+	}
+	else
+	{
+		$selectQuery= "INSERT INTO customerusers(firstname,secondname,username,gender,phone,password) VALUES('".$gottenFname."','".$gottenSname."','".$gottenUsername."','".$gottenGender."','".$gottenPhone."','".$gottenPassword."')";
+		$selectResults = mysqli_query($connection,$selectQuery)or die(mysqli_error($connection));
+		$code = "reg_success";
+		$message = "Thank you for registering for Mathree";
+		array_push($response, array("code"=>$code,"message"=>$message));
+		echo json_encode($response);
+	}
+mysqli_close($connection);
+?>
